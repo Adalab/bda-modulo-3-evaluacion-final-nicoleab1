@@ -1,10 +1,50 @@
-Los Datos
-Los datos que se proporciona consisten en dos conjuntos de archivos que, en conjunto, describen el
-comportamiento de los clientes dentro de un programa de lealtad de una aerolínea.
-Customer Flight Analysis.csv
+# Proyecto de Limpieza y Análisis de Datos
+
+## Descripción del Proyecto
+
+Este proyecto consistió en la limpieza, análisis exploratorio y visualización de dos bases de datos: 
+
+1. **Customer Flight Activity**: Información sobre la actividad de vuelo de los clientes.
+2. **Customer Loyalty History**: Información detallada sobre el perfil de los clientes, incluyendo su estado civil, género, salario, nivel educativo, entre otros.
+
+## Pasos Realizados
+
+### 1. Limpieza de Datos
+
+- **Datos Nulos**: Se identificaron y trataron valores nulos en columnas clave.
+  - En las columnas `Cancellation Month` y `Cancellation Year`, los valores nulos fueron imputados con la constante `"None"`, ya que se consideró que estos valores nulos representaban clientes que no habían cancelado su membresía.
+  
+- **Salarios Negativos**: Se identificaron y eliminaron las filas que contenían valores negativos en la columna `Salary`, ya que estos valores eran inconsistentes con la realidad y podían distorsionar el análisis.
+  
+- **Imputación de Datos Faltantes**: Para los valores nulos en la columna `Salary`, se decidió imputar los datos utilizando el método `KNNImputer`, que toma como referencia los valores de los vecinos más cercanos para completar los datos faltantes.
+
+### 2. Análisis Exploratorio de Datos (EDA)
+
+Se realizó un EDA exhaustivo para entender mejor las características de los datos, identificar patrones y posibles relaciones entre las diferentes variables.
+
+### 3. Unión de las bases de datos
+
+Se realizó la unión de las dos bases de datos de acuerdo a las instrucciones de la evaluación a través de un merge. 
+
+### 4. Visualizaciones de Datos
+
+Para facilitar la interpretación de los datos y sus relaciones, se crearon varias visualizaciones, que incluyen gráficos de distribución, gráficos de dispersión, boxplots y gráficos de barras, entre otros. Estas visualizaciones ayudaron a identificar patrones entre las distintas variables del dataset.
+
+## Librerías Utilizadas
+
+- **Pandas**: Para la manipulación y limpieza de los datos.
+- **Seaborn** y **Matplotlib**: Para la creación de visualizaciones.
+- **Scikit-learn**: Para la imputación de datos nulos usando el `KNNImputer`.
+
+
+## Los Datos
+
+### Customer Flight Analysis.csv
+
 Este archivo contiene información sobre la actividad de vuelo de los clientes, incluyendo el número de
 vuelos reservados, la distancia volada, puntos acumulados y redimidos, y costos asociados a los puntos
 redimidos
+
 Loyalty Number: Este atributo representa un identificador único para cada cliente dentro del
 programa de lealtad de la aerolínea. Cada número de lealtad corresponde a un cliente específico.
 Year: Indica el año en el cual se registraron las actividades de vuelo para el cliente.
@@ -23,7 +63,7 @@ beneficios como vuelos gratis, mejoras, etc.
 Dollar Cost Points Redeemed: El valor en dólares de los puntos que el cliente ha redimido durante el mes.
 
 
-Customer Loyalty
+### Customer Loyalty History.csv
 
 Este archivo proporciona un perfil detallado de los clientes, incluyendo su ubicación, nivel educativo,
 ingresos, estado civil, y detalles sobre su membresía en el programa de lealtad (como el tipo de tarjeta,

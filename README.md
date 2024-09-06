@@ -30,12 +30,16 @@ Se realizó la unión de las dos bases de datos de acuerdo a las instrucciones d
 
 Para facilitar la interpretación de los datos y sus relaciones, se crearon varias visualizaciones, que incluyen gráficos de distribución, gráficos de dispersión, boxplots y gráficos de barras, entre otros. Estas visualizaciones ayudaron a identificar patrones entre las distintas variables del dataset.
 
+### 5. Evaluación de diferencias
+
+Para saber si existe una diferencia significativa en la cantidad de vuelos reservados segun el nivel educativo
+
 ## Librerías Utilizadas
 
 - **Pandas**: Para la manipulación y limpieza de los datos.
 - **Seaborn** y **Matplotlib**: Para la creación de visualizaciones.
 - **Scikit-learn**: Para la imputación de datos nulos usando el `KNNImputer`.
-
+- **SciPy**: Para pruebas estadísticas y análisis.
 
 ## Los Datos
 
